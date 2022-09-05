@@ -1,0 +1,24 @@
+// import { useEffect, useState } from "react";
+import React, { Component }  from 'react';
+import useFetch from "./useFetch";
+import BlogList from "./BlogList";
+const Home = () => {
+   const {data :blogs,isPending ,error}  = useFetch(' http://localhost:8000/blogs');
+   // const [blogs, setBlog] = useState(null);
+   // const [isPending, SetIsPending] = useState(true);
+   // const[error,setError]= useState(null);
+
+   
+   return (
+     
+      <div className="home">
+          {/* {error &&<div>{error}</div>}  */}
+         {isPending && <div>Loading...</div>}
+         {blogs && <BlogList blogs={blogs} title="All Blogs !" />}
+
+      </div>
+
+   );
+}
+
+export default Home;
