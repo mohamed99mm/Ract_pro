@@ -1,32 +1,31 @@
-
-import React, { Component }  from 'react';
-import { StrictMode } from 'react';
-import Home from './Home';
-import Navbar from './Navbar';
-import Create from './Create';
+import { StrictMode } from "react";
+import Home from "./Home";
+import NotFound from "./NotFound";
+import Navbar from "./Navbar";
+import Create from "./Create";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import BlogDetails from './BlogDetails';
+import BlogDetails from "./BlogDetails";
 function App() {
-
   //const person = {name: "yoshi" , age: 30};
   return (
     <Router>
       <div className="App">
-
         <Navbar />
         <Switch>
-          <Route exact path='/'>
+          <Route exact path="/">
             <Home />
           </Route>
 
-          <Route path='/create'>
+          <Route path="/create">
             <Create />
           </Route>
-          <Route path='/blogs/:id'>
+          <Route path="/blogs/:id">
             <BlogDetails />
           </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
-
       </div>
     </Router>
   );

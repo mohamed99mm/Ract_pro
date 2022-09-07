@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import React, { Component }  from 'react';
 const Create = () => {
     const [title,setTitle] =useState('');
     const [body,setBody] =useState('');
